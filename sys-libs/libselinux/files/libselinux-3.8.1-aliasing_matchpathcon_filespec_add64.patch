@@ -1,0 +1,72 @@
+From 179ea6fd86da520d826c5781fab63a915fe780e0 Mon Sep 17 00:00:00 2001
+From: Pepper Gray <hello@peppergray.xyz>
+Date: Sat, 11 Apr 2026 15:55:17 +0200
+Subject: [PATCH] define matchpathcon_filespec_add/add64
+
+matchpathcon_filespec_add and matchpathcon_filespec_add64 are
+exported in libselinux.map, so both need to be linker-visible
+symbols
+
+fix: #512
+Signed-off-by: Pepper Gray <hello@peppergray.xyz>
+---
+ include/selinux/selinux.h |  4 +---
+ src/matchpathcon.c        | 21 ++++++++++-----------
+ 2 files changed, 11 insertions(+), 14 deletions(-)
+
+diff --git a/include/selinux/selinux.h b/include/selinux/selinux.h
+index f3cf5a2096..241bb54a94 100644
+--- a/include/selinux/selinux.h
++++ b/include/selinux/selinux.h
+@@ -537,10 +537,8 @@ extern int matchpathcon_index(const char *path,
+    with the same inode (e.g. due to multiple hard links).  If so, then
+    use the latter of the two specifications based on their order in the 
+    file contexts configuration.  Return the used specification index. */
+-#if defined(_FILE_OFFSET_BITS) && _FILE_OFFSET_BITS == 64 && __BITS_PER_LONG < 64
+-#define matchpathcon_filespec_add matchpathcon_filespec_add64
+-#endif
+ extern int matchpathcon_filespec_add(ino_t ino, int specind, const char *file);
++extern int matchpathcon_filespec_add64(ino_t ino, int specind, const char *file);
+ 
+ /* Destroy any inode associations that have been added, e.g. to restart
+    for a new filesystem. */
+diff --git a/src/matchpathcon.c b/src/matchpathcon.c
+index 51f0e4ff90..eb2fa495fd 100644
+--- a/src/matchpathcon.c
++++ b/src/matchpathcon.c
+@@ -261,25 +261,24 @@ int matchpathcon_filespec_add(ino_t ino, int specind, const char *file)
+ 	return -1;
+ }
+ 
+-#if defined(_FILE_OFFSET_BITS) && _FILE_OFFSET_BITS == 64 && __BITS_PER_LONG < 64
+-/* alias defined in the public header but we undefine it here */
+-#undef matchpathcon_filespec_add
++int matchpathcon_filespec_add64(unsigned long ino, int specind,
++                              const char *file)
++{
++	return matchpathcon_filespec_add(ino, specind, file);
++}
+ 
+-/* ABI backwards-compatible shim for non-LFS 32-bit systems */
++#if (defined(_FILE_OFFSET_BITS) && _FILE_OFFSET_BITS == 64) && defined(__INO64_T_TYPE) && !defined(__INO_T_MATCHES_INO64_T)
+ 
++/* ABI backwards-compatible shim for non-LFS 32-bit systems */
+ static_assert(sizeof(unsigned long) == sizeof(__ino_t), "inode size mismatch");
+ static_assert(sizeof(unsigned long) == sizeof(uint32_t), "inode size mismatch");
+ static_assert(sizeof(ino_t) == sizeof(ino64_t), "inode size mismatch");
+ static_assert(sizeof(ino64_t) == sizeof(uint64_t), "inode size mismatch");
+ 
+-extern int matchpathcon_filespec_add(unsigned long ino, int specind,
+-                                     const char *file);
++#elif (defined(_FILE_OFFSET_BITS) && _FILE_OFFSET_BITS == 64) || defined(__INO_T_MATCHES_INO64_T)
++
++static_assert(sizeof(uint64_t) == sizeof(ino_t), "inode size mismatch");
+ 
+-int matchpathcon_filespec_add(unsigned long ino, int specind,
+-                              const char *file)
+-{
+-	return matchpathcon_filespec_add64(ino, specind, file);
+-}
+ #else
+ 
+ static_assert(sizeof(unsigned long) == sizeof(ino_t), "inode size mismatch");

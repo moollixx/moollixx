@@ -1,0 +1,177 @@
+
+# AMD64 Profiles
+# amd64		default/linux/amd64/23.0/musl/llvm				exp
+
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened                                     exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/openrc                              exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/systemd                             exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/openrc                      exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/systemd                     exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/openrc                     exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/systemd                    exp
+
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/openrc              exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/systemd             exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/openrc             exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/systemd            exp
+
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/gnome/systemd       exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/xfce/openrc         exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/xfce/systemd        exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/lxqt/openrc         exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/lxqt/systemd        exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/plasma/openrc       exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/plasma/systemd      exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/cosmic/openrc       exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/cosmic/systemd      exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/niri/openrc         exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/niri/systemd        exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/river/openrc        exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/river/systemd       exp
+
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/gnome/systemd      exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/xfce/openrc        exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/xfce/systemd       exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/lxqt/openrc        exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/lxqt/systemd       exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/plasma/openrc      exp 
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/plasma/systemd     exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/cosmic/openrc      exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/cosmic/systemd     exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/niri/openrc        exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/niri/systemd       exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/river/openrc       exp
+amd64       moollixx/linux/amd64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/river/systemd      exp
+
+# ARM64 Profiles
+# arm64		default/linux/arm64/23.0/musl/llvm				exp
+
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened                                     exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/openrc                              exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/systemd                             exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/openrc                      exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/systemd                     exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/openrc                     exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/systemd                    exp
+
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/openrc              exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/systemd             exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/openrc             exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/systemd            exp
+
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/gnome/systemd       exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/xfce/openrc         exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/xfce/systemd        exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/lxqt/openrc         exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/lxqt/systemd        exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/plasma/openrc       exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/plasma/systemd      exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/cosmic/openrc       exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/cosmic/systemd      exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/niri/openrc         exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/niri/systemd        exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/river/openrc        exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/river/systemd       exp
+
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/gnome/systemd      exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/xfce/openrc        exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/xfce/systemd       exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/lxqt/openrc        exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/lxqt/systemd       exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/plasma/openrc      exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/plasma/systemd     exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/cosmic/openrc      exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/cosmic/systemd     exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/niri/openrc        exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/niri/systemd       exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/river/openrc       exp
+arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/river/systemd      exp
+
+
+# LoongArch Profiles
+# loong		default/linux/loong/23.0/la64v100/lp64d/llvm					exp
+
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened                                   exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/openrc                            exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/systemd                           exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/openrc                    exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/systemd                   exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/openrc                   exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/systemd                  exp
+
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/openrc            exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/systemd           exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/openrc           exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/systemd          exp
+
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/gnome/systemd     exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/xfce/openrc       exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/xfce/systemd      exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/lxqt/openrc       exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/lxqt/systemd      exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/plasma/openrc     exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/plasma/systemd    exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/cosmic/openrc     exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/cosmic/systemd    exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/niri/openrc       exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/niri/systemd      exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/river/openrc      exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/river/systemd     exp
+
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/gnome/systemd    exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/xfce/openrc      exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/xfce/systemd     exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/lxqt/openrc      exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/lxqt/systemd     exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/plasma/openrc    exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/plasma/systemd   exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/cosmic/openrc    exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/cosmic/systemd   exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/niri/openrc      exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/niri/systemd     exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/river/openrc     exp
+loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/river/systemd    exp
+
+# RISC-V Profiles
+# riscv		default/linux/riscv/23.0/rv64/lp64d/musl			dev
+
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened                                     exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/openrc                              exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/systemd                             exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/openrc                      exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/systemd                     exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/openrc                     exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/systemd                    exp
+
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/openrc              exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/systemd             exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/openrc             exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/systemd            exp
+
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/gnome/systemd       exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/xfce/openrc         exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/xfce/systemd        exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/lxqt/openrc         exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/lxqt/systemd        exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/plasma/openrc       exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/plasma/systemd      exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/cosmic/openrc       exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/cosmic/systemd      exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/niri/openrc         exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/niri/systemd        exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/river/openrc        exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/desktop/river/systemd       exp
+
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/gnome/systemd      exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/xfce/openrc        exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/xfce/systemd       exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/lxqt/openrc        exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/lxqt/systemd       exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/plasma/openrc      exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/plasma/systemd     exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/cosmic/openrc      exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/cosmic/systemd     exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/niri/openrc        exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/niri/systemd       exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/river/openrc       exp
+riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/river/systemd      exp

@@ -1,0 +1,2 @@
+# selinux - Enable AppArmor support
+USE="apparmor"
