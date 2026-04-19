@@ -1,1 +1,2 @@
-../../../../../../../default/linux/riscv/23.0/rv64/lp64d/musl/llvm
+../../../../../../../default/linux/riscv/23.0/rv64/lp64d/musl
+gentoo:features/musl/llvm

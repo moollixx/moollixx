@@ -92,7 +92,6 @@ arm64       moollixx/linux/arm64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop
 # loong		default/linux/loong/23.0/la64v100/lp64d/llvm					exp
 
 loong       moollixx/linux/loong64/23.0/musl                                                        exp
-
 loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened                                   exp
 loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/openrc                            exp
 loong       moollixx/linux/loong64/23.0/musl/llvm/libcxx/hardened/systemd                           exp
