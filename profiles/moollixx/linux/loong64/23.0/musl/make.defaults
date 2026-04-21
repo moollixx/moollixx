@@ -1,1 +1,2 @@
+LIBDIR_lp64d="lib"
 CHOST_lp64d="loongarch64-unknown-linux-musl"
