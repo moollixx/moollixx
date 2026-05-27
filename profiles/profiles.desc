@@ -176,3 +176,12 @@ riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/deskt
 riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/niri/systemd       exp
 riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/river/openrc       exp
 riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/desktop/river/systemd      exp
+
+
+# PPC Profiles
+# arm64		default/linux/ppc/23.0/musl				exp
+
+ppc       moollixx/linux/ppc/23.0/musl/llvm/libcxx/                                                 exp
+ppc       moollixx/linux/ppc/23.0/musl/llvm/libcxx/hardened                                         exp
+ppc       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/openrc                              exp
+ppc       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/selinux/openrc                      exp
