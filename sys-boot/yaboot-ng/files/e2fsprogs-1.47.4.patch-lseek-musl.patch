@@ -1,0 +1,26 @@
+From 54b47b90ea5e5b325e60d5336ff39d53f70fd961 Mon Sep 17 00:00:00 2001
+From: Pepper Gray <hello@peppergray.xyz>
+Date: Sun, 21 Jun 2026 00:45:32 +0200
+Subject: [PATCH] Fix my_llseek error when targeting 32bit musl libc
+
+remove workaround when 64bit filetypes are used
+
+fix: #277
+Signed-off-by: Pepper Gray <hello@peppergray.xyz>
+---
+ e2fsprogs/lib/blkid/llseek.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/e2fsprogs/lib/blkid/llseek.c b/lib/blkid/llseek.c
+index edb643209..2183c095a 100644
+--- a/e2fsprogs/lib/blkid/llseek.c
++++ b/e2fsprogs/lib/blkid/llseek.c
+@@ -50,7 +50,7 @@ extern long long llseek(int fd, long long offset, int origin);
+ 
+ #else	/* ! HAVE_LLSEEK */
+ 
+-#if SIZEOF_LONG == SIZEOF_LONG_LONG
++#if SIZEOF_LONG == SIZEOF_LONG_LONG || SIZEOF_OFF_T == 8
+ 
+ #define my_llseek lseek
+ 
