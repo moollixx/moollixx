@@ -1,0 +1,2 @@
+llvm-core/clang-common -default-lld
+llvm-runtimes/clang-runtime -default-lld
