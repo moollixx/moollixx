@@ -183,3 +183,10 @@ riscv       moollixx/linux/riscv64/23.0/musl/llvm/libcxx/hardened/apparmor/deskt
 
 ppc       moollixx/linux/ppc/23.0/musl/llvm/libcxx/                                                 exp
 ppc       moollixx/linux/ppc/23.0/musl/llvm/libcxx/desktop                                          exp
+
+
+# ARMv7a_hf Profiles
+# arm		default/linux/arm/23.0/armv7a_hf/musl				exp
+
+ppc       moollixx/linux/armv7a_hf/23.0/musl/llvm/libcxx/                                                 exp
+ppc       moollixx/linux/armv7a_hf/23.0/musl/llvm/libcxx/desktop                                          exp

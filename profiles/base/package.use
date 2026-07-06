@@ -1,0 +1,5 @@
+
+# crossdev
+# cross_llvm-*/* zstd LLVM_TARGETS: * -ARC -CSKY -DirectX -M68k -Xtensa
+
+llvm-runtimes/libunwind static-libs

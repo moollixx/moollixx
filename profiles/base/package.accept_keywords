@@ -1,1 +1,5 @@
+# crossdev
+# cross_llvm-*/* ~*
+# cross_llvm-*/rust-std **
+
 llvm-runtimes/libatomic-stub **
