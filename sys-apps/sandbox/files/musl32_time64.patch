@@ -1,0 +1,65 @@
+From 3e403becd9ba526dcacbbbb17104f99c1f5e3c66 Mon Sep 17 00:00:00 2001
+From: Pepper Gray <hello@peppergray.xyz>
+Date: Thu, 9 Jul 2026 15:40:44 +0200
+Subject: [PATCH] gen_symbol: fix time symbols on musl32
+
+building on 32bit musl fails to find time symbols:
+`lutimes`, `utime`, `futimesat`, `utimensat`, `utimes`
+after they have been redirect to their time64 ABI names
+
+emit legacy names for compatibility
+
+Closes: https://bugs.gentoo.org/978656
+Signed-off-by: Pepper Gray <hello@peppergray.xyz>
+---
+ localdecls.h                  |  8 ++++++++
+ scripts/gen_symbol_header.awk | 17 +++++++++++++++--
+ 2 files changed, 23 insertions(+), 2 deletions(-)
+
+diff --git a/localdecls.h b/localdecls.h
+index 7039814..8767e64 100644
+--- a/localdecls.h
++++ b/localdecls.h
+@@ -129,6 +129,14 @@ static size_t strlcpy(char *dst, const char *src, size_t size)
+ # define weak_alias(_name, _aliasname) \
+ 	extern __typeof (_name) _aliasname __attribute__ ((weak, alias (#_name)));
+ 
++/* Based on glibc (__hidden_ver2) */
++# define strong_asm_alias(_name, _aliasname) \
++	extern __typeof (_name) __sandbox_strong_asm_alias_##_aliasname \
++		__asm__ (#_aliasname) __attribute__ ((alias (#_name)));
++# define strong_asm_alias(_name, _aliasname) \
++	extern __typeof (_name) __sandbox_strong_asm_alias_##_aliasname \
++		__asm__ (#_aliasname) __attribute__ ((weak, alias (#_name)));
++
+ #define attribute_hidden __attribute__((visibility("hidden")))
+ 
+ #define likely(x)   __builtin_expect(!!(x), 1)
+diff --git a/scripts/gen_symbol_header.awk b/scripts/gen_symbol_header.awk
+index 0180f6c..f838c0a 100644
+--- a/scripts/gen_symbol_header.awk
++++ b/scripts/gen_symbol_header.awk
+@@ -178,8 +178,21 @@ END {
+ 					       sym_real_name, sym_index, symbol_array[2]);
+ 			} else {
+ 				# For non-versioned libc's we use strong aliases
+-				printf("strong_alias(%s, %s);\n", sym_real_name,
+-				       sym_index);
++				
++				# 32-bit musl redirects time interfaces to time64 ABI names.
++				# A strong_alias inerits these asm names, does not emit the
++				# legacy symbols and fails during linking (bug #978656).
++				if( sym_index == "utime" ||
++					sym_index == "utimes" ||
++					sym_index == "lutimes" ||
++					sym_index == "futimesat" ||
++					sym_index == "utimensat") {
++					printf("strong_asm_alias(%s, %s);\n", sym_real_name,
++				    	   sym_index);
++				} else {
++					printf("strong_alias(%s, %s);\n", sym_real_name,
++				    	   sym_index);
++				}
+ 			}
+ 
+ 			if (WEAK_SYMBOLS[sym_index]) {
