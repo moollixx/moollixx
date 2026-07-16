@@ -5,12 +5,11 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 DISTUTILS_EXT=1
-DISTUTILS_OPTIONAL=1
 PYTHON_COMPAT=( python3_{11..14} )
 USE_RUBY="ruby32 ruby33"
 
 # No, I am not calling ruby-ng
-inherit distutils-r1 toolchain-funcs multilib-minimal
+inherit distutils-r1 flag-o-matic toolchain-funcs multilib-minimal
 
 MY_PV="${PV//_/-}"
 MY_P="${PN}-${MY_PV}"
@@ -46,31 +45,26 @@ BDEPEND="virtual/pkgconfig
 	python? (
 		>=dev-lang/swig-2.0.9
 		dev-python/pip[${PYTHON_USEDEP}]
-		${PYTHON_DEPS}
-		${DISTUTILS_DEPS}
-	)
+)
 	ruby? ( >=dev-lang/swig-2.0.9 )"
+PATCHES=(
+	"${FILESDIR}"/${PN}-3.8.1_lsf.patch # bug #979354 fixed in 3.11
+)
 
-src_prepare() {	
-	eapply "${FILESDIR}"/libselinux-3.8.1-aliasing_stat64.patch
-	eapply "${FILESDIR}"/libselinux-3.9-aliasing_matchpathcon_filespec_add64.patch
-	eapply "${FILESDIR}"/libselinux-3.8.1-audit2why-symbols.patch
+src_prepare() {
+	eapply "${PATCHES[@]}"
 	eapply_user
-
-	if use python; then
-		distutils-r1_src_prepare
-	fi
 
 	multilib_copy_sources
 }
 
-multilib_src_configure() {
-	default
-	if multilib_is_native_abi; then
-		if use python; then
-			distutils-r1_src_configure
-		fi
-	fi
+src_configure() {
+	# bug #926520
+	# https://github.com/SELinuxProject/selinux/issues/461
+	# https://github.com/SELinuxProject/selinux/issues/512
+	append-ldflags $(test-flags-CCLD -Wl,--undefined-version)
+
+	multilib-minimal_src_configure
 }
 
 multilib_src_compile() {
@@ -167,13 +161,6 @@ python_install() {
 	# install the C extension symlink
 	local pycext="$(python -c 'import importlib.machinery;print(importlib.machinery.EXTENSION_SUFFIXES[0])' || die)"
 	dosym -r "$(python_get_sitedir)/selinux/_selinux${pycext}" "$(python_get_sitedir)/_selinux${pycext}"
-}
-
-multilib_src_test() {
-	default
-	if use python; then
-		distutils-r1_src_test
-	fi
 }
 
 pkg_postinst() {

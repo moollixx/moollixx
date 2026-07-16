@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{11..14} )
 USE_RUBY="ruby32 ruby33"
 
 # No, I am not calling ruby-ng
-inherit distutils-r1 toolchain-funcs multilib-minimal
+inherit distutils-r1 flag-o-matic toolchain-funcs multilib-minimal
 
 MY_PV="${PV//_/-}"
 MY_P="${PN}-${MY_PV}"
@@ -23,7 +23,7 @@ if [[ ${PV} == 9999 ]]; then
 	S="${WORKDIR}/${P}/${PN}"
 else
 	SRC_URI="https://github.com/SELinuxProject/selinux/releases/download/${MY_PV}/${MY_P}.tar.gz"
-	KEYWORDS="~amd64 ~arm ~arm64 ~mips ~riscv ~x86"
+	KEYWORDS="amd64 arm arm64 ~mips ~riscv x86"
 	S="${WORKDIR}/${MY_P}"
 fi
 
@@ -47,14 +47,24 @@ BDEPEND="virtual/pkgconfig
 		dev-python/pip[${PYTHON_USEDEP}]
 )
 	ruby? ( >=dev-lang/swig-2.0.9 )"
+PATCHES=(
+	"${FILESDIR}"/${PN}-3.8.1_lsf.patch # bug #979354 fixed in 3.11
+)
 
 src_prepare() {
-	eapply "${FILESDIR}"/libselinux-3.8.1-aliasing_stat64.patch
-	eapply "${FILESDIR}"/libselinux-3.9-aliasing_matchpathcon_filespec_add64.patch
-	eapply "${FILESDIR}"/libselinux-3.8.1-audit2why-symbols.patch
+	eapply "${PATCHES[@]}"
 	eapply_user
 
 	multilib_copy_sources
+}
+
+src_configure() {
+	# bug #926520
+	# https://github.com/SELinuxProject/selinux/issues/461
+	# https://github.com/SELinuxProject/selinux/issues/512
+	append-ldflags $(test-flags-CCLD -Wl,--undefined-version)
+
+	multilib-minimal_src_configure
 }
 
 multilib_src_compile() {
